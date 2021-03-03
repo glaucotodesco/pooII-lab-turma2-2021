@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.facens.pooii.sistema.sistema.dto.ClientInsertDTO;
+
 @Entity
 @Table(name="TB_CLIENT")
 public class Client implements Serializable{
@@ -21,7 +23,16 @@ public class Client implements Serializable{
     
     private String address;
 
-    public Long getId() {
+    public Client() {
+     
+	}
+
+    public Client(ClientInsertDTO dto) {
+        this.name = dto.getName();
+        this.address  = dto.getAddress();
+	}
+
+	public Long getId() {
         return id;
     }
 

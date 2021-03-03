@@ -1,5 +1,7 @@
 package com.facens.pooii.sistema.sistema.dto;
 
+import com.facens.pooii.sistema.sistema.entities.Client;
+
 public class ClientDTO {
 
     private Long id;
@@ -13,6 +15,11 @@ public class ClientDTO {
     public ClientDTO(Long id, String name) {
         this.id = id;
         this.name = name;
+	}
+
+	public ClientDTO(Client cli) {
+        this.id = cli.getId();
+        this.name = cli.getName();
 	}
 
 	public Long getId() {
